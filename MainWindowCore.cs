@@ -76,7 +76,7 @@ public partial class MainWindow : Window
 
 
     //*UI DRAWING
-    private readonly Timer visualEffectRefreshTimer = new(1);
+    private readonly Timer visualEffectRefreshTimer = new(1.666);
 
     private WriteableBitmap? WaveBitmap;
 
@@ -631,7 +631,7 @@ public partial class MainWindow : Window
             for (var i = 0; i < fft.Length; i++)
                 points[i] = new PointF((float)Math.Log10(i + 1) * 100f, 240 - fft[i] * 256); //semilog
 
-            graphics.DrawCurve(new Pen(Color.LightSkyBlue, 1), points);
+            graphics.DrawLines(new Pen(Color.LightSkyBlue, 1), points);
 
 
             //no please
